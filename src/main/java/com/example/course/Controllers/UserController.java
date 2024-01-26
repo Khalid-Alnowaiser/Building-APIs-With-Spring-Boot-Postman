@@ -16,5 +16,7 @@ public class UserController {
             System.out.println(e.toString());
             return new ResponseEntity<>("An unexpected error has occurred, please check the logs for more info",HttpStatus.BAD_REQUEST);
         }
+
+
     }
 }
