@@ -41,6 +41,10 @@ public class UserController {
     public ResponseEntity<Object>findAll(){
         return userService.findAll();
     }
+    @GetMapping("users/filtrationAndPagination")
+    public ResponseEntity<Object>filtrationAndPagination(@RequestParam(required = false) Integer pageNumber, @RequestParam(required = false) Integer pageSize, @RequestParam(required = false) String name, @RequestParam(required = false) String email, @RequestParam(required = false) String status){
+        return userService.filtrationAndPagination( pageNumber,pageSize,name,email,status);
+    }
 
 
 }

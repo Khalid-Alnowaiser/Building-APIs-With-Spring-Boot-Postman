@@ -16,6 +16,5 @@ public class UserDTO {
     private UUID userID;
     private String email;
     private String name;
-    private String password;
     private String status;
 }

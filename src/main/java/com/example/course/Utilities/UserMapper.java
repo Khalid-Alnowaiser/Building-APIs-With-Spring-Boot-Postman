@@ -10,7 +10,6 @@ public class UserMapper {
                     user.getUserId(),
                     user.getEmail(),
                     user.getName(),
-                    user.getPassword(),
                     user.getStatus()
             );
             return userDTO;
