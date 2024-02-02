@@ -8,7 +8,10 @@ public class UserMapper {
         try {
             UserDTO userDTO = new UserDTO(
                     user.getUserId(),
-                    user.getEmail()
+                    user.getEmail(),
+                    user.getName(),
+                    user.getPassword(),
+                    user.getStatus()
             );
             return userDTO;
         }catch (Exception e){

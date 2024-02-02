@@ -6,10 +6,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,6 +23,23 @@ public class UserController {
     @PostMapping("/users/add")
     public ResponseEntity<Object>createUser(@RequestBody UserEntity userEntity){
         return userService.createUser(userEntity);
+    }
+
+    @PutMapping("users/update")
+    public ResponseEntity<Object>updateUser(@RequestBody UserEntity userEntity){
+        return userService.updateUser(userEntity);
+    }
+    @DeleteMapping("users/delete/{userId}")
+    public ResponseEntity<Object>deleteUser(@PathVariable UUID userId){
+        return userService.deleteUser(userId);
+    }
+    @GetMapping("users/find/{userId}")
+    public ResponseEntity<Object>findUser(@PathVariable UUID userId){
+        return userService.findUser(userId);
+    }
+    @GetMapping("users/findAll")
+    public ResponseEntity<Object>findAll(){
+        return userService.findAll();
     }
 
 
